@@ -1,0 +1,349 @@
+.bg-dark-lighter {
+    background-color: $dark-lighter;
+}
+
+.bg-dark-lightest {
+    background-color: $dark-lightest;
+}
+
+.navbar-transparent {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .70) 50%, rgba(0, 0, 0, 1) 100%);
+
+    .nav-link {
+        color: $white !important;
+        opacity: 0.8;
+        text-align: center;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    .dropdown-menu {
+        background-color: rgba(55, 55, 55, 0.9);
+
+        .dropdown-item {
+            color: $white;
+            opacity: 0.8;
+
+            &:hover {
+                background-color: transparent;
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            text-align: center;
+        }
+    }
+}
+
+.navbar-dark {
+
+    .nav-link {
+        text-align: center;
+    }
+
+    .dropdown-menu {
+        background-color: $dark-lightest;
+        border: 1px solid lighten($dark-lightest, 15%);
+
+        .dropdown-item {
+            color: $white;
+            opacity: 0.8;
+
+            &:hover {
+                background-color: transparent;
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            text-align: center;
+        }
+    }
+}
+
+header {
+    min-height: 200px;
+
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+.input-group {
+    .form-control:focus {
+        box-shadow: none;
+        border-color: $border-color;
+        opacity: 1;
+    }
+
+}
+
+.video-background-wrapper {
+    video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #515151;
+        mix-blend-mode: overlay;
+        z-index: -1;
+    }
+}
+
+.card-transparent {
+    background-color: rgba(55, 55, 55, 0.65);
+
+    .form-group {
+        margin-top: 1rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: $white;
+        opacity: .8;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    input[type='text'], input[type='date'], input[type='email'], input[type='password'] {
+        opacity: .9;
+    }
+}
+
+ul.timeline {
+    list-style-type: none;
+    position: relative;
+
+    &:before {
+        content: ' ';
+        background: lighten($dark-lightest, 20%);
+        display: inline-block;
+        position: absolute;
+        top: 2px;
+        left: 29px;
+        width: 2px;
+        height: 95%;
+        z-index: 400;
+    }
+
+    li {
+        margin: 20px 0;
+        padding-left: 15px;
+
+        &:before {
+            content: ' ';
+            background: lighten($dark-lightest, 25%);
+            display: inline-block;
+            position: absolute;
+            border-radius: 50%;
+            border: 3px solid lighten($dark-lightest, 50%);
+            left: 20px;
+            width: 20px;
+            height: 20px;
+            z-index: 400;
+        }
+
+        &.active:before {
+            background: $primary;
+        }
+
+        .badge {
+            font-size: .8rem;
+        }
+    }
+}
+
+table {
+    td, th {
+        vertical-align: middle !important;
+        text-align: center;
+    }
+
+    thead {
+        background-color: lighten($dark, 4%);
+
+        th {
+            border: none !important;
+        }
+    }
+
+    tr.collapse-row {
+        button {
+            background-color: $dark-lighter;
+            border-radius: 0;
+
+            &:hover {
+                background-color: lighten($dark-lighter, 5%);
+
+                i {
+                    color: lighten($dark-lightest, 50%);
+                }
+            }
+
+            &:focus {
+                box-shadow: none;
+            }
+
+            i {
+                color: lighten($dark-lightest, 20%);
+
+                &.rotate {
+                    transition: all 0.4s ease-in-out;
+                }
+
+                &.rotate.down {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        td {
+            border: none;
+            padding: 0;
+            background-color: darken($dark-lightest, 5%);
+        }
+
+        div.collapse {
+            max-height: 280px;
+            overflow-y: auto;
+        }
+    }
+}
+
+.progress {
+    height: 5px;
+    margin: 0 1.5rem 0.25rem 1.5rem;
+
+    @media (max-width: 768px) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+a {
+    &.disabled {
+        pointer-events: none;
+        color: $gray-500;
+    }
+}
+
+input {
+    &.input-dark {
+        background-color: lighten($dark-lightest, 10%);
+        border-color: $dark-lightest;
+        color: $white;
+
+        &:focus {
+            background-color: lighten($dark-lightest, 20%);
+            color: $white;
+            border-color: lighten($dark-lightest, 40%) !important;
+            box-shadow: none;
+        }
+    }
+}
+
+.nav-pills {
+    .nav-link {
+        color: $gray-300;
+
+        &:hover {
+            color: $white;
+        }
+    }
+}
+
+.pagination {
+    .page-item {
+        .page-link {
+            background-color: $dark-lightest;
+            color: $white;
+            border-color: lighten($dark, 5%);
+
+            &:hover {
+                background-color: lighten($dark-lightest, 5%);
+            }
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+
+        &.disabled {
+            .page-link {
+                background-color: lighten($dark-lightest, 15%);
+                color: $gray-400;
+            }
+        }
+
+        &.active {
+            .page-link {
+                background-color: $primary;
+            }
+        }
+    }
+}
+
+.swal2-popup {
+    background-color: $dark !important;
+
+    .swal2-title {
+        color: $white;
+    }
+
+    .swal2-content {
+        color: $white;
+    }
+
+    .swal2-styled:focus {
+        box-shadow: none;
+    }
+}
+
+.flatpickr-calendar {
+    .flatpickr-day {
+        &.selected {
+            background-color: $green;
+            border-color: $green;
+
+            &:hover {
+                background-color: lighten($green, 5%);
+                border-color: lighten($green, 5%);
+            }
+
+            &.nextMonthDay, &.prevMonthDay {
+                background-color: $green;
+                border-color: $green;
+
+                &:hover {
+                    background-color: lighten($green, 5%);
+                    border-color: lighten($green, 5%);
+                }
+            }
+        }
+    }
+
+    .flatpickr-months {
+        .flatpickr-next-month:hover, .flatpickr-prev-month:hover {
+            svg {
+                fill: $green !important;
+            }
+        }
+    }
+}
